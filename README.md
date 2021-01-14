@@ -22,12 +22,12 @@ set shiftwidth=8
 ## Comment format
 
 ~~~shell
-	/// <summary>
-	/// Overview of current call
-	/// </summary>
-	/// <param name="_ParameterName">Parameter description</param>
-	/// <returns>Return to description</returns>
-	/// <examples>Instructions</examples>
+/// <summary>
+/// Overview of current call
+/// </summary>
+/// <param name="_ParameterName">Parameter description</param>
+/// <returns>Return to description</returns>
+/// <examples>Instructions</examples>
 ~~~
 
 
@@ -37,14 +37,7 @@ set shiftwidth=8
 
 First install all required dependencies and build tools:
 ```shell
-sudo apt install \
-	git \
-	autoconf \
-	automake \
-	libtool-bin \
-	cmake \
-	XanaduRuntime \
-	XanaduCore
+sudo apt install XanaduRuntime XanaduCore
 ```
 
 Then clone the actual project repository:
