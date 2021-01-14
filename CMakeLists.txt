@@ -50,6 +50,7 @@ add_definitions(-DXANADU_DATABASE_LIB)
 
 #包含源文件
 aux_source_directory(./source SRC)
+aux_source_directory(./source/SQLite3 SRC)
 
 #设置输出目录
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
