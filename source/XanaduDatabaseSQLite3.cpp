@@ -1,8 +1,4 @@
-﻿//
-// Created by Administrator on 2021/1/14.
-//
-
-#include <XanaduDatabase/XanaduDatabaseSQLite3.h>
+﻿#include <XanaduDatabase/XanaduDatabaseSQLite3.h>
 #include "SQLite3/sqlite3.h"
 
 XDatabaseSQLite3::XDatabaseSQLite3() XANADU_NOTHROW

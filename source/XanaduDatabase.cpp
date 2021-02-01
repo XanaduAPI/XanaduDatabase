@@ -1,8 +1,4 @@
-﻿//
-// Created by Administrator on 2021/1/14.
-//
-
-#include <XanaduDatabase/XanaduDatabase.h>
+﻿#include <XanaduDatabase/XanaduDatabase.h>
 
 bool XANADUAPI Xanadu_Database_Initialize() XANADU_NOTHROW
 {
