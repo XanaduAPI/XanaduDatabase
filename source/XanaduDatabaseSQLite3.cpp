@@ -44,7 +44,7 @@ bool XDatabaseSQLite3::Execute(const XString& _Database, const XString& _SQL, st
 	auto		vSync = SQLITE_ERROR;
 	if (vSQLite3.Open(_Database))
 	{
-		auto	vSQL = _SQL.ToUString();
+		auto	vSQL = _SQL.toUString();
 		auto	vHandle = static_cast<sqlite3*>(vSQLite3._database_handle);
 		auto	vResultVector = std::vector<XVariant>();
 		auto	vResultDB = static_cast<char**>(nullptr);
