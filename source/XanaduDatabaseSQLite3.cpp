@@ -1,18 +1,18 @@
 ﻿#include <XanaduDatabase/XanaduDatabaseSQLite3.h>
 #include "SQLite3/sqlite3.h"
 
-XDatabaseSQLite3::XDatabaseSQLite3() XANADU_NOTHROW
+XDatabaseSQLite3::XDatabaseSQLite3() noexcept
 {
 	this->_database_handle = nullptr;
 }
 
-XDatabaseSQLite3::~XDatabaseSQLite3() XANADU_NOTHROW
+XDatabaseSQLite3::~XDatabaseSQLite3() noexcept
 {
 	Close();
 }
 
 /// Open the database
-bool XDatabaseSQLite3::Open(const XString& _Database) XANADU_NOTHROW
+bool XDatabaseSQLite3::Open(const XString& _Database) noexcept
 {
 	auto		vHandle = static_cast<sqlite3*>(nullptr);
 	auto		vResult = sqlite3_open16(_Database.data(), &vHandle);
@@ -25,7 +25,7 @@ bool XDatabaseSQLite3::Open(const XString& _Database) XANADU_NOTHROW
 }
 
 /// Close the database
-bool XDatabaseSQLite3::Close() XANADU_NOTHROW
+bool XDatabaseSQLite3::Close() noexcept
 {
 	if (this->_database_handle)
 	{
@@ -36,7 +36,7 @@ bool XDatabaseSQLite3::Close() XANADU_NOTHROW
 }
 
 /// Executes the SQL statement in the specified database
-bool XDatabaseSQLite3::Execute(const XString& _Database, const XString& _SQL, std::function<bool(const std::vector<XVariant>& _DBRLine)> _Lambda) XANADU_NOTHROW
+bool XDatabaseSQLite3::Execute(const XString& _Database, const XString& _SQL, std::function<bool(const std::vector<XVariant>& _DBRLine)> _Lambda) noexcept
 {
 	XANADU_CHECK_RETURN(_Lambda, false);
 

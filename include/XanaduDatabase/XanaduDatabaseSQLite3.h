@@ -12,21 +12,21 @@ private:
 
 public:
 	/// Structure
-	XDatabaseSQLite3() XANADU_NOTHROW;
+	XDatabaseSQLite3() noexcept;
 
 	/// Virtual destructor
-	virtual ~XDatabaseSQLite3() XANADU_NOTHROW;
+	virtual ~XDatabaseSQLite3() noexcept;
 
 public:
 	/// Open the database
-	virtual bool Open(const XString& _Database) XANADU_NOTHROW;
+	virtual bool Open(const XString& _Database) noexcept;
 
 	/// Close the database
-	virtual bool Close() XANADU_NOTHROW;
+	virtual bool Close() noexcept;
 
 public:
 	/// Executes the SQL statement in the specified database
-	static bool Execute(const XString& _Database, const XString& _SQL, std::function<bool(const std::vector<XVariant>& _DBRLine)> _Lambda) XANADU_NOTHROW;
+	static bool Execute(const XString& _Database, const XString& _SQL, std::function<bool(const std::vector<XVariant>& _DBRLine)> _Lambda) noexcept;
 };
 
 #endif /// _XANADU_DATABASE_SQLITE3_H_

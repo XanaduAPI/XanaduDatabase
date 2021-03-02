@@ -1,11 +1,11 @@
 ﻿#include <XanaduDatabase/XanaduDatabase.h>
 
-bool XANADUAPI Xanadu_Database_Initialize() XANADU_NOTHROW
+bool XANADUAPI Xanadu_Database_Initialize() noexcept
 {
 	return true;
 };
 
-void XANADUAPI Xanadu_Database_Release() XANADU_NOTHROW
+void XANADUAPI Xanadu_Database_Release() noexcept
 {
 };
 
