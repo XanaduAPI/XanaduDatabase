@@ -43,4 +43,4 @@ __attribute((destructor)) void Xanadu_Database_Library_Fini(void)
 {
 	Xanadu_Database_Release();
 };
-#endif//XANADU_SYSTEM_WINDOWS
+#endif // XANADU_SYSTEM_WINDOWS

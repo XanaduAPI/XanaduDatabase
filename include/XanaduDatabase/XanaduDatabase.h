@@ -3,4 +3,4 @@
 
 #include <XanaduDatabase/XanaduDatabaseSQLite3.h>
 
-#endif /// _XANADU_DATABASE_H_
+#endif // _XANADU_DATABASE_H_

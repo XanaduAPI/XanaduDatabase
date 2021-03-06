@@ -3,30 +3,30 @@
 
 #include <XanaduDatabase/XanaduDatabaseHeader.h>
 
-/// SQLite3 database operations
+// SQLite3 database operations
 class XANADU_DATABASE_EXPORT XDatabaseSQLite3
 {
 private:
-	/// Database handle
+	// Database handle
 	HANDLE				_database_handle;
 
 public:
-	/// Structure
+	// Structure
 	XDatabaseSQLite3() noexcept;
 
-	/// Virtual destructor
+	// Virtual destructor
 	virtual ~XDatabaseSQLite3() noexcept;
 
 public:
-	/// Open the database
+	// Open the database
 	virtual bool Open(const XString& _Database) noexcept;
 
-	/// Close the database
+	// Close the database
 	virtual bool Close() noexcept;
 
 public:
-	/// Executes the SQL statement in the specified database
+	// Executes the SQL statement in the specified database
 	static bool Execute(const XString& _Database, const XString& _SQL, std::function<bool(const std::vector<XVariant>& _DBRLine)> _Lambda) noexcept;
 };
 
-#endif /// _XANADU_DATABASE_SQLITE3_H_
+#endif // _XANADU_DATABASE_SQLITE3_H_

@@ -11,7 +11,7 @@ XDatabaseSQLite3::~XDatabaseSQLite3() noexcept
 	Close();
 }
 
-/// Open the database
+// Open the database
 bool XDatabaseSQLite3::Open(const XString& _Database) noexcept
 {
 	auto		vHandle = static_cast<sqlite3*>(nullptr);
@@ -24,7 +24,7 @@ bool XDatabaseSQLite3::Open(const XString& _Database) noexcept
 	return false;
 }
 
-/// Close the database
+// Close the database
 bool XDatabaseSQLite3::Close() noexcept
 {
 	if (this->_database_handle)
@@ -35,7 +35,7 @@ bool XDatabaseSQLite3::Close() noexcept
 	return true;
 }
 
-/// Executes the SQL statement in the specified database
+// Executes the SQL statement in the specified database
 bool XDatabaseSQLite3::Execute(const XString& _Database, const XString& _SQL, std::function<bool(const std::vector<XVariant>& _DBRLine)> _Lambda) noexcept
 {
 	XANADU_CHECK_RETURN(_Lambda, false);
@@ -56,13 +56,13 @@ bool XDatabaseSQLite3::Execute(const XString& _Database, const XString& _SQL, st
 			vSync = sqlite3_get_table(vHandle, vSQL.data(), &vResultDB, &vResultRow, &vResultColumn, &vResultError);
 			if(SQLITE_OK == vSync)
 			{
-				/// The callback title [回调标题]
+				// The callback title [回调标题]
 				for(auto vIndexColumn = 0; vIndexColumn < vResultColumn; ++vIndexColumn)
 				{
 					vResultVector.push_back(XByteArray(vResultDB[vIndexColumn]));
 					_Lambda(vResultVector);
 				}
-				/// Callback result set [回调结果]
+				// Callback result set [回调结果]
 				for(auto vIndex = 1; vIndex <= vResultRow && vResultColumn; ++vIndex)
 				{
 					vResultVector.clear();
