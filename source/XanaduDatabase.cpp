@@ -34,12 +34,12 @@ extern "C" BOOL WINAPI DllMain(HANDLE _HDllHandle, DWORD _Reason, LPVOID _Reserv
 	return TRUE;
 }
 #else
-__attribute((constructor)) void Xanadu_Database_Library_Init(void)
+__attribute((constructor)) void _XANADU_DATABASE_BUILD_SHAREDrary_Init(void)
 {
 	Xanadu_Database_Initialize();
 };
 
-__attribute((destructor)) void Xanadu_Database_Library_Fini(void)
+__attribute((destructor)) void _XANADU_DATABASE_BUILD_SHAREDrary_Fini(void)
 {
 	Xanadu_Database_Release();
 };

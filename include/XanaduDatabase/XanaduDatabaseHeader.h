@@ -4,8 +4,8 @@
 #include <XanaduRuntime/XanaduRuntime.h>
 #include <XanaduCore/XanaduCore.h>
 
-#ifndef			XANADU_DATABASE_BUILD_STATIC
-#ifdef			XANADU_DATABASE_LIB
+#ifndef			_XANADU_DATABASE_BUILD_STATIC
+#ifdef			_XANADU_DATABASE_BUILD_SHARED
 #ifdef XANADU_SYSTEM_WINDOWS
 #define			XANADU_DATABASE_EXPORT					__declspec(dllexport)
 #else
@@ -17,10 +17,10 @@
 #else
 #define			XANADU_DATABASE_EXPORT					__attribute__((visibility("default")))
 #endif // XANADU_SYSTEM_WINDOWS
-#endif // XANADU_DATABASE_LIB
+#endif // _XANADU_DATABASE_BUILD_SHARED
 #else
 #define			XANADU_DATABASE_EXPORT
-#endif // XANADU_DATABASE_BUILD_STATIC
+#endif // _XANADU_DATABASE_BUILD_STATIC
 #define			XANADU_DATABASE_LOCAL
 
 #endif // _XANADU_DATABASE_HEADER_H_
