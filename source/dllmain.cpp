@@ -1,4 +1,4 @@
-﻿#include <XanaduDatabase/XanaduDatabase.h>
+﻿#include <XanaduDatabase/Xanadu.h>
 
 bool XANADUAPI Xanadu_Database_Initialize() noexcept
 {

@@ -1,7 +1,7 @@
 ﻿#ifndef			_XANADU_DATABASE_SQLITE3_H_
 #define			_XANADU_DATABASE_SQLITE3_H_
 
-#include <XanaduDatabase/XanaduDatabaseHeader.h>
+#include <XanaduDatabase/Header.h>
 
 // SQLite3 database operations
 class XANADU_DATABASE_EXPORT XDatabaseSQLite3
@@ -29,4 +29,4 @@ public:
 	static bool Execute(const XString& _Database, const XString& _SQL, std::function<bool(const std::vector<XVariant>& _DBRLine)> _Lambda) noexcept;
 };
 
-#endif // _XANADU_DATABASE_SQLITE3_H_
+#endif

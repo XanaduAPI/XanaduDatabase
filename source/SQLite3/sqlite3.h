@@ -33,7 +33,7 @@
 #ifndef _XANADU_SQLITE3_H_
 #define _XANADU_SQLITE3_H_
 
-#include <XanaduDatabase/XanaduDatabaseHeader.h>
+#include <XanaduDatabase/Header.h>
 #include <stdarg.h>
 
 /*

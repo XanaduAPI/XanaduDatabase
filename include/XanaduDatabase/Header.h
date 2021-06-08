@@ -1,26 +1,26 @@
 ﻿#ifndef			_XANADU_DATABASE_HEADER_H_
 #define			_XANADU_DATABASE_HEADER_H_
 
-#include <XanaduRuntime/XanaduRuntime.h>
-#include <XanaduCore/XanaduCore.h>
+#include <XanaduRuntime/Xanadu.h>
+#include <XanaduCore/Xanadu.h>
 
 #ifndef			_XANADU_DATABASE_BUILD_STATIC
 #ifdef			_XANADU_DATABASE_BUILD_SHARED
-#ifdef XANADU_SYSTEM_WINDOWS
+#if defined(XANADU_SYSTEM_WINDOWS)
 #define			XANADU_DATABASE_EXPORT					__declspec(dllexport)
 #else
 #define			XANADU_DATABASE_EXPORT					__attribute__((visibility("default")))
-#endif // XANADU_SYSTEM_WINDOWS
+#endif
 #else
-#ifdef XANADU_SYSTEM_WINDOWS
+#if defined(XANADU_SYSTEM_WINDOWS)
 #define			XANADU_DATABASE_EXPORT					__declspec(dllimport)
 #else
 #define			XANADU_DATABASE_EXPORT					__attribute__((visibility("default")))
-#endif // XANADU_SYSTEM_WINDOWS
-#endif // _XANADU_DATABASE_BUILD_SHARED
+#endif
+#endif
 #else
 #define			XANADU_DATABASE_EXPORT
-#endif // _XANADU_DATABASE_BUILD_STATIC
+#endif
 #define			XANADU_DATABASE_LOCAL
 
-#endif // _XANADU_DATABASE_HEADER_H_
+#endif

@@ -1,4 +1,4 @@
-﻿#include <XanaduDatabase/XanaduDatabaseSQLite3.h>
+﻿#include <XanaduDatabase/SQLite3.h>
 #include "SQLite3/sqlite3.h"
 
 XDatabaseSQLite3::XDatabaseSQLite3() noexcept
