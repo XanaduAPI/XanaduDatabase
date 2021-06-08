@@ -1,11 +1,11 @@
 ﻿#include <XanaduDatabase/Xanadu.h>
 
-bool Xanadu_Database_Initialize() noexcept
+bool XANADUAPI _Xanadu_Database_Initialize() noexcept
 {
 	return true;
 };
 
-void Xanadu_Database_Release() noexcept
+void XANADUAPI _Xanadu_Database_Release() noexcept
 {
 };
 
@@ -19,14 +19,14 @@ extern "C" BOOL WINAPI DllMain(HANDLE _HDllHandle, DWORD _Reason, LPVOID _Reserv
 	switch(_Reason)
 	{
 		case DLL_PROCESS_ATTACH:
-			Xanadu_Database_Initialize();
+			_Xanadu_Database_Initialize();
 			break;
 		case DLL_THREAD_ATTACH:
 			break;
 		case DLL_THREAD_DETACH:
 			break;
 		case DLL_PROCESS_DETACH:
-			Xanadu_Database_Release();
+			_Xanadu_Database_Release();
 			break;
 		default:
 			break;
@@ -34,13 +34,13 @@ extern "C" BOOL WINAPI DllMain(HANDLE _HDllHandle, DWORD _Reason, LPVOID _Reserv
 	return TRUE;
 }
 #else
-__attribute((constructor)) void _Xanadu_Database_Dynamic_Library_Init()
+__attribute((constructor)) void _Xanadu_Database_Dynamic_Library_Init(void)
 {
-	Xanadu_Database_Initialize();
+	_Xanadu_Database_Initialize();
 };
 
-__attribute((destructor)) void _Xanadu_Database_Dynamic_Library_Fini()
+__attribute((destructor)) void _Xanadu_Database_Dynamic_Library_Fini(void)
 {
-	Xanadu_Database_Release();
+	_Xanadu_Database_Release();
 };
-#endif // XANADU_SYSTEM_WINDOWS
+#endif
