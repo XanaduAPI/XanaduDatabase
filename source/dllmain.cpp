@@ -1,16 +1,16 @@
 ﻿#include <XanaduDatabase/Xanadu.h>
 
-bool XANADUAPI Xanadu_Database_Initialize() noexcept
+bool Xanadu_Database_Initialize() noexcept
 {
 	return true;
 };
 
-void XANADUAPI Xanadu_Database_Release() noexcept
+void Xanadu_Database_Release() noexcept
 {
 };
 
 
-#ifdef XANADU_SYSTEM_WINDOWS
+#if defined(XANADU_SYSTEM_WINDOWS)
 extern "C" BOOL WINAPI DllMain(HANDLE _HDllHandle, DWORD _Reason, LPVOID _Reserved)
 {
 	XANADU_UNPARAMETER(_HDllHandle);
@@ -34,12 +34,12 @@ extern "C" BOOL WINAPI DllMain(HANDLE _HDllHandle, DWORD _Reason, LPVOID _Reserv
 	return TRUE;
 }
 #else
-__attribute((constructor)) void _XANADU_DATABASE_BUILD_SHAREDrary_Init(void)
+__attribute((constructor)) void _Xanadu_Database_Dynamic_Library_Init()
 {
 	Xanadu_Database_Initialize();
 };
 
-__attribute((destructor)) void _XANADU_DATABASE_BUILD_SHAREDrary_Fini(void)
+__attribute((destructor)) void _Xanadu_Database_Dynamic_Library_Fini()
 {
 	Xanadu_Database_Release();
 };
