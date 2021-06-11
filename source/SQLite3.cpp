@@ -59,7 +59,7 @@ bool XDatabaseSQLite3::Execute(const XString& _Database, const XString& _SQL, st
 				// The callback title [回调标题]
 				for(auto vIndexColumn = 0; vIndexColumn < vResultColumn; ++vIndexColumn)
 				{
-					vResultVector.push_back(XByteArray(vResultDB[vIndexColumn]));
+					vResultVector.emplace_back(XVariant(vResultDB[vIndexColumn]));
 					_Lambda(vResultVector);
 				}
 				// Callback result set [回调结果]
@@ -68,7 +68,7 @@ bool XDatabaseSQLite3::Execute(const XString& _Database, const XString& _SQL, st
 					vResultVector.clear();
 					for(auto vIndexColumn = 0; vIndexColumn < vResultColumn; ++vIndexColumn)
 					{
-						vResultVector.push_back(XByteArray(vResultDB[vIndex * vResultColumn + vIndexColumn]));
+						vResultVector.emplace_back(vResultDB[vIndex * vResultColumn + vIndexColumn]);
 						_Lambda(vResultVector);
 					}
 				}
