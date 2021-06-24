@@ -1,7 +1,6 @@
 ﻿#ifndef			_XANADU_DATABASE_HEADER_H_
 #define			_XANADU_DATABASE_HEADER_H_
 
-#include <XanaduRuntime/Xanadu.h>
 #include <XanaduCore/Xanadu.h>
 
 #ifndef			_XANADU_DATABASE_BUILD_STATIC
