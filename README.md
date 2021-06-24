@@ -52,4 +52,4 @@ sudo make install
 This library is licensed under the [GNU Lesser General Public License v2.1](https://www.gnu.org/licenses/lgpl-2.1.en.html),
 also included in the repository in the `COPYING` file.
 
-README Updated on: 2021-01-14
+README Updated on: 2021-06-24
